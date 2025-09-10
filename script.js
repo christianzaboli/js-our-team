@@ -50,7 +50,7 @@ const card = `
 <div class="col">
   <div class="d-flex myImg bg-black text-light p-0">
     <img src="${img}" class="img-fluid" alt="${name}">
-    <div class="d-flex flex-column justify-content-between ms-2 p-2">
+    <div class="d-flex flex-column justify-content-between ms-2 py-2">
       <h2 class="m-0 fw-bold">${name}</h2>
       <p class="m-0">${role}</p>
       <a href="mailto:" class="m-0 text-info text-decoration-none">${email}</a>
