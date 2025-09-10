@@ -36,3 +36,39 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+// riferimento per l'innesto delle cards 
+const listaTeamHTML = document.getElementById('listaTeam')
+
+// FUNZIONE DI CREAZIONE CARD
+function createNewCard(x) {
+
+	// destructuring style
+const	{name, img, role, email} = x
+
+const card = `
+<div class="col">
+  <div class="d-flex myImg bg-black text-light p-0">
+    <img src="${img}" class="img-fluid" alt="${name}">
+    <div class="d-flex flex-column justify-content-between ms-2 p-2">
+      <h2 class="m-0">${name}</h2>
+      <p class="m-0">${role}</p>
+      <a href="mailto:" class="m-0 text-info text-decoration-none">${email}</a>
+    </div>
+  </div>
+  </div>
+</div>
+`;
+
+	return card
+}
+
+// ciclo per aggiungere le card singole e formare una stringa da poi mettere in html
+let cards = '';
+for (let i = 0; i < teamMembers.length; i++) {
+  const membro = teamMembers[i];
+  console.log(membro);
+  cards += createNewCard(membro)
+  console.log(cards);
+}
+listaTeamHTML.innerHTML = cards;
